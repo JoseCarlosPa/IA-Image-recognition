@@ -66,6 +66,4 @@ You can find much more about how to use this project in our [Wiki](https://githu
 
 ## Licencia 📄
 
-This project is under the License (Your License) - see the file [LICENSE.md](https://github.com/JoseCarlosPa/IA-Image-recognition/blob/main/LICENSE) for more details
-
-) 😊
+This project is under the License (MIT) - see the file [LICENSE.md](https://github.com/JoseCarlosPa/IA-Image-recognition/blob/main/LICENSE) for more details
