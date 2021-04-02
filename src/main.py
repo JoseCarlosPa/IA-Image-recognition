@@ -22,3 +22,7 @@ number_class = [
     'Cero', 'Uno', 'Dos', 'Tres', 'Cuatro', 'Cinco', 'Seis',
     'Siete', 'Ocho', 'Nueve'
 ]
+
+# Training dataset and test from MNIST
+num_train_examples = metadata.splits['train'].num_examples
+num_test_examples = metadata.splits['test'].num_examples
