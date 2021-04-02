@@ -1,16 +1,16 @@
-# This is a sample Python script.
+from __future__ import absolute_import, division, print_function, unicode_literals
 
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import tensorflow as tf
+import tensorflow_datasets as tfds
+
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+import logging
+logger = tf.get_logger()
+
+logger.setLevel(logging.ERROR)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+dataset, metadata = tfds.load('mnist', as_supervised=True, with_info=True)
+train_dataset, test_dataset = dataset['train'], dataset['test']
