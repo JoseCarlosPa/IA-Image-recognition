@@ -24,7 +24,7 @@ Python>= 3.5 <= 3.8 X64 (IMPORTANT!)
 
 _Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
 
-_Dí cómo será ese paso_
+_First Stepts_
 
 ```
 First we will copy our repository in our local machine https://github.com/JoseCarlosPa/IA-Image-recognition
@@ -47,7 +47,13 @@ pip3 install tensorflow
 pip3 install tensorflow_datasets
 ```
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_If you got problems with de viusal c++ on windows _
+
+```
+[Latest Visual c++ download](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0)
+```
+
+_Used Tools_
 
 * [TensorFlow](http://tensorflow.org/) - Automatic Learning
 * [Keras](https://keras.io/) - Deep learning Framework for Data sicence
@@ -58,12 +64,12 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 You can find much more about how to use this project in our [Wiki](https://github.com/tu/proyecto/wiki)
 
-## Autores ✒️
+## Authors✒️
 
 
 * **Jose Carlos Pacheco Sanchez** - *Initial Work* - [JoseCarlosPa](https://github.com/JoseCarlosPa)
 
 
-## Licencia 📄
+## Licence📄
 
 This project is under the License (MIT) - see the file [LICENSE.md](https://github.com/JoseCarlosPa/IA-Image-recognition/blob/main/LICENSE) for more details

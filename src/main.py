@@ -55,7 +55,7 @@ datasetTest = datasetTest.batch(size)
 
 # Start the Model learning process
 model.fit(
-    datasetTesting, epochs=1,  # Number of epocs to use
+    datasetTesting, epochs=3,  # Number of epocs to use
     steps_per_epoch=math.ceil(number_train / size)
 )
 
