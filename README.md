@@ -58,6 +58,7 @@ _Used Tools_
 * [TensorFlow](http://tensorflow.org/) - Automatic Learning
 * [Keras](https://keras.io/) - Deep learning Framework for Data sicence
 * [PyCharm](https://www.jetbrains.com/es-es/pycharm/download/) - IDE For Python developers
+* [MNIST](http://yann.lecun.com/exdb/mnist/) - DataSet for Image recognitiion
 
 ## Wiki 📖
 
