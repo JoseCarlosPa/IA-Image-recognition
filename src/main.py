@@ -19,25 +19,34 @@ from libs import *
 import logging
 import matplotlib.pyplot as plt
 import math
-import numpy as np
 
+# Start initital loggers of tenserflow/keras
 logger = tf.get_logger()
 logger.setLevel(logging.ERROR)
 
+# We import the dataset of MNIST from the
 dataset, metadata = tfds.load('mnist', as_supervised=True, with_info=True)
 datasetTesting, datasetTest = dataset['train'], dataset['test']
 
 # Initializaction of test numbers
-number_train = metadata.splits['train'].num_examples
-number_examples = metadata.splits['test'].num_examples
+number_train = metadata.splits['train'].num_examples # 60.000 Data
+number_examples = metadata.splits['test'].num_examples # 10.000 Data
+
+# We pass all the image pixels into Withe or Black
 datasetTesting = datasetTesting.map(imageWitheBlak)
 datasetTest = datasetTest.map(imageWitheBlak)
 
 # General initiation of the neural Network with the number of layers
 model = tf.keras.Sequential([
-    tf.keras.layers.Flatten(input_shape=(28, 28, 1)),
+
+    # Start the model with the number of nerual networks (784)
+    tf.keras.layers.Flatten(input_shape=(28, 28, 1)), # 28 X 28
+
+    # Split two new 64 size Dense layaers
     tf.keras.layers.Dense(64, activation=tf.nn.relu),
     tf.keras.layers.Dense(64, activation=tf.nn.relu),
+
+    # Output Layer
     tf.keras.layers.Dense(10, activation=tf.nn.softmax)  # Clasiffication
 ])
 

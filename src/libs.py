@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-class_names = [
+numberNames = [
     'Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six',
     'Seven', 'Eight', 'Nine'
 ]
@@ -55,4 +55,4 @@ def plotGraph(i, predictions, finalLabels, images):
     else:
         color = 'red'
 
-    plt.xlabel("Prediccion: {}".format(class_names[finalLabels]), color=color)
+    plt.xlabel("Prediccion: {}".format(numberNames[finalLabels]), color=color)
