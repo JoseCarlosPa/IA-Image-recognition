@@ -49,9 +49,9 @@ pip3 install tensorflow_datasets
 
 _If you got problems with de viusal c++ on windows _
 
-```
+
 [Latest Visual c++ download](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0)
-```
+
 
 _Used Tools_
 
