@@ -46,11 +46,12 @@ datasetTesting = datasetTesting.map(imageWitheBlak)
 datasetTest = datasetTest.map(imageWitheBlak)
 
 # General initiation of the neural Network with the number of layers
+# https://www.tensorflow.org/api_docs/python/tf/keras/Sequential
 model = tf.keras.Sequential([
 
     # Start the model with the number of nerual networks (784)
     tf.keras.layers.Flatten(input_shape=(28, 28, 1)), # 28 X 28
-    # Split two new N size Dense layaers
+    # Split two new N size Dense layaers (64 recomended)
     tf.keras.layers.Dense(neurons, activation=tf.nn.relu),
     tf.keras.layers.Dense(neurons, activation=tf.nn.relu),
 
@@ -65,12 +66,12 @@ model.compile(
     metrics=['accuracy']
 )
 
-# Learning rate into 32 blocks
+# Learning rate into N blocks (32 recomended)
 size = bts
 datasetTesting = datasetTesting.repeat().shuffle(number_train).batch(size)
 datasetTest = datasetTest.batch(size)
 
-# Start the Model learning process
+# Start the Model learning process (epochs recomended)
 model.fit(
     datasetTesting, epochs=epcs,  # Number of epocs to use
     steps_per_epoch=math.ceil(number_train / size)
@@ -78,7 +79,7 @@ model.fit(
 
 # Evaluation of the Model
 loss, accuracy = model.evaluate(
-    datasetTest, steps=math.ceil(number_examples / 32)
+    datasetTest, steps=math.ceil(number_examples / size)
 )
 
 print("Test Results!!: ", accuracy)
@@ -90,8 +91,8 @@ for images, labeles in datasetTest.take(1):
     labeles = labeles.numpy()
     predictions = model.predict(images)
 
-rows = 5
-cols = 3
+rows = 7
+cols = 4
 total = rows * cols
 
 plt.figure(figsize=(2 * 2 * cols, 2 * rows))
