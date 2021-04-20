@@ -38,7 +38,7 @@ def plotImages(i, predictions, finalLabel):
     finalLabels = np.argmax(predictions)
 
     thisplot[finalLabels].set_color('red')
-    thisplot[finalLabel].set_color('blue')
+    thisplot[finalLabel].set_color('green')
 
 
 def plotGraph(i, predictions, finalLabels, images):
@@ -51,7 +51,7 @@ def plotGraph(i, predictions, finalLabels, images):
 
     finalLabels = np.argmax(predictions)
     if finalLabels == finalLabel:
-        color = 'blue'
+        color = 'green'
     else:
         color = 'red'
 
