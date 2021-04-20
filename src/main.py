@@ -20,6 +20,15 @@ import logging
 import matplotlib.pyplot as plt
 import math
 
+
+print("How many neurons you want to use (on hidden layers) ?")
+neurons = input()
+print("Batch Size ?")
+bts = int(input())
+print("How many epochs ?")
+epcs = int(input())
+
+
 # Start initital loggers of tenserflow/keras
 logger = tf.get_logger()
 logger.setLevel(logging.ERROR)
@@ -41,10 +50,9 @@ model = tf.keras.Sequential([
 
     # Start the model with the number of nerual networks (784)
     tf.keras.layers.Flatten(input_shape=(28, 28, 1)), # 28 X 28
-
-    # Split two new 64 size Dense layaers
-    tf.keras.layers.Dense(64, activation=tf.nn.relu),
-    tf.keras.layers.Dense(64, activation=tf.nn.relu),
+    # Split two new N size Dense layaers
+    tf.keras.layers.Dense(neurons, activation=tf.nn.relu),
+    tf.keras.layers.Dense(neurons, activation=tf.nn.relu),
 
     # Output Layer
     tf.keras.layers.Dense(10, activation=tf.nn.softmax)  # Clasiffication
@@ -58,13 +66,13 @@ model.compile(
 )
 
 # Learning rate into 32 blocks
-size = 32
+size = bts
 datasetTesting = datasetTesting.repeat().shuffle(number_train).batch(size)
 datasetTest = datasetTest.batch(size)
 
 # Start the Model learning process
 model.fit(
-    datasetTesting, epochs=3,  # Number of epocs to use
+    datasetTesting, epochs=epcs,  # Number of epocs to use
     steps_per_epoch=math.ceil(number_train / size)
 )
 
