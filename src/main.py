@@ -60,7 +60,7 @@ model = tf.keras.Sequential([
 
 # Compile function to use
 model.compile(
-    optimizer='adam',
+    optimizer='sgd',
     loss='sparse_categorical_crossentropy',
     metrics=['accuracy']
 )
