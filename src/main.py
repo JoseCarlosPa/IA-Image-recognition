@@ -6,6 +6,7 @@
 +   ID: A01702828                                                                                                      +
 +                                                                                                                      +
 +   Script Ob: Main usage of the Script and variant desition on epoc and block nunbers learning                        +
++   Based on: https://www.digitalocean.com/community/tutorials/how-to-build-a-neural-network-to-recognize-handwritten-digits-with-tensorflow
 +                                                                                                                      +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 """
@@ -51,6 +52,7 @@ model = tf.keras.Sequential([
 
     # Start the model with the number of nerual networks (784)
     tf.keras.layers.Flatten(input_shape=(28, 28, 1)), # 28 X 28
+
     # Split two new N size Dense layaers (64 recomended)
     tf.keras.layers.Dense(neurons, activation=tf.nn.relu),
     tf.keras.layers.Dense(neurons, activation=tf.nn.relu),
@@ -66,7 +68,7 @@ model.compile(
     metrics=['accuracy']
 )
 
-# Learning rate into N blocks (32 recomended)
+# Learning rate into N blocks (>32 recomended)
 size = bts
 datasetTesting = datasetTesting.repeat().shuffle(number_train).batch(size)
 datasetTest = datasetTest.batch(size)
@@ -96,10 +98,12 @@ cols = 4
 total = rows * cols
 
 plt.figure(figsize=(2 * 2 * cols, 2 * rows))
+
+# Plotting the results
 for i in range(total):
-    plt.subplot(rows, 2 * cols, 2 * i + 1)
-    plotGraph(i, predictions, labeles, images)
-    plt.subplot(rows, 2 * cols, 2 * i + 2)
-    plotImages(i, predictions, labeles)
+    plt.subplot(rows, 2 * cols, 2 * i + 1) # Canvas structure
+    plotImg(i, predictions, labeles, images) # Plot each image with the prediction
+    plt.subplot(rows, 2 * cols, 2 * i + 2) # Canvas strucutre
+    plotGrph(i, predictions, labeles) # plot the bar graphs
 
 plt.show()
