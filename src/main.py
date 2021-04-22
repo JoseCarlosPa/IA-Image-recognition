@@ -23,7 +23,7 @@ import math
 
 print("How many neurons you want to use (on hidden layers) ?")
 neurons = input()
-print("Batch Size ?")
+print("Batch Size (>32)?")
 bts = int(input())
 print("How many epochs ?")
 epcs = int(input())
@@ -79,7 +79,7 @@ model.fit(
 
 # Evaluation of the Model
 loss, accuracy = model.evaluate(
-    datasetTest, steps=math.ceil(number_examples / size)
+    datasetTest, steps=math.ceil(number_examples / 32)
 )
 
 print("Test Results!!: ", accuracy)
